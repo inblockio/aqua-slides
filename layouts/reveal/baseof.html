@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{ .Title }} Aqua</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="Aqua">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/reveal.css">
+    <link rel="stylesheet" href="/css/theme/aqua.css" id="theme">
+    <link rel="stylesheet" href="/lib/css/zenburn.css">
+
+    <link rel="icon" href="/images/aqua-white-32x32.png" sizes="32x32">
+    <link rel="icon" href="/images/aqua-white-57x57.png" sizes="57x57">
+    <link rel="icon" href="/images/aqua-white-76x76.png" sizes="76x76">
+    <link rel="icon" href="/images/aqua-white-96x96.png" sizes="96x96">
+    <link rel="icon" href="/images/aqua-white-120x120.png" sizes="120x120">
+    <link rel="icon" href="/images/aqua-white-128x128.png" sizes="128x128">
+    <link rel="icon" href="/images/aqua-white-144x144.png" sizes="144x144">
+    <link rel="icon" href="/images/aqua-white-152x152.png" sizes="152x152">
+    <link rel="icon" href="/images/aqua-white-167x167.png" sizes="167x167">
+    <link rel="icon" href="/images/aqua-white-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon-precomposed" href="images/aqua-white-180x180.png">
+    <link rel="icon" href="/images/aqua-white-192x192.png" sizes="192x192">
+    <link rel="icon" href="/images/aqua-white-195x195.png" sizes="195x195">
+    <link rel="icon" href="/images/aqua-white-196x196.png" sizes="196x196">
+    <link rel="icon" href="/images/aqua-white-228x228.png" sizes="228x228">
+    <link rel="icon" href="/images/aqua-white-270x270.png" sizes="270x270">
+    <meta name="msapplication-TileImage" content="/images/aqua-white-270x270.png">
+
+    {{ if eq .Params.pdf_allow "yes" }}
+    <script>
+        var link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.type = 'text/css'
+        link.href = window.location.search.match(/print-pdf/gi) ? '/css/print/pdf.css' : '/css/print/paper.css'
+        document.getElementsByTagName('head')[0].appendChild(link)
+    </script>
+    {{ end }}
+    <!--[if lt IE 9]>
+    <script src="/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body class="reveal">
+    <div class="slides">
+
+        <section
+            data-background-color="#E2E2E2"
+            data-background-opacity="0.2"
+            data-background-image="/images/logo.svg"
+            data-background-size="contain">
+            <h1>{{ .Title }}</h1>
+            <pre>
+                Title: {{ .Title }}<br>
+                Created: {{ .Date.Format "Jan 2, 2006" }}<br>
+                Language: {{ .Params.Language }}
+            </pre>
+        </section>
+        {{ $page := . }}
+        {{ range $slide := .Params.slides_start }}
+        {{ partial $slide $page }}
+        {{ end }}
+
+        {{ .Content }}
+
+        {{ range $slide := .Params.slides_end }}
+        {{ partial $slide $page }}
+        {{ end }}
+    </div>
+    <script src="/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            autoPlayMedia: false,
+            center: true,
+            transition: 'slide',
+            dependencies: [
+                {
+                    src: '/lib/js/classList.js',
+                    condition: function() {
+                        return !document.body.classList
+                    }
+                },{
+                    src: '/plugin/markdown/marked.js',
+                    condition: function() {
+                        return !!document.querySelector('[data-markdown]')
+                    }
+                },{
+                    src: '/plugin/markdown/markdown.js',
+                    condition: function() {
+                        return !!document.querySelector('[data-markdown]')
+                    }
+                },{
+                    src: '/plugin/highlight/highlight.js',
+                    async: true, condition: function() {
+                        return !!document.querySelector('pre code')
+                    },
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },{
+                    src: '/plugin/zoom-js/zoom.js',
+                    async: true
+                }
+            ]
+        })
+    </script>
+	</body>
+</html>

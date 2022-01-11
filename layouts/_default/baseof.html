@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "en-us" }}" class="no-ie no-js dark-mode">
+    <head>
+        {{- partial "head.html" . -}}
+        {{ hugo.Generator }}
+    </head>
+    <body>
+        <div class="container">
+        {{- block "main" . }}{{- end }}
+        </div>
+    </body>
+</html>

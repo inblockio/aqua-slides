@@ -1,0 +1,28 @@
+{{ define "main" -}}
+<div class="container">
+    <header>
+        <h1>
+            {{ .Title }}
+        </h1>
+    </header>
+    <ul>
+        {{- range (where site.RegularPages "Section" "slideshows") }}
+        <li>
+            <h3>
+                {{ .Title }}
+            </h3>
+            {{ if .Date }}
+            <time class="mb-2" datetime='{{ .Date.Format "2006-01-02T15:04:05Z0700" }}'>
+                {{ .Date.Format "Jan 2, 2006" }}
+            </time>
+            {{ end }}
+            <p>
+                <a href="{{ .RelPermalink }}">
+                    View Slideshow
+                </a>
+            </p>
+        </li>
+        {{- end }}
+    </ul>
+</div>
+{{- end }}

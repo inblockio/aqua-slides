@@ -1,0 +1,25 @@
+baseURL: "https://aqua.inblock.io/"
+languageCode: "en-us"
+title: "Aqua"
+enableRobotsTXT: true
+canonifyURLs: true
+
+permalinks:
+  posts: "/slideshows/:slug/"
+
+languages:
+  en:
+    title: "Aqua"
+    subtitle: ""
+    languageName: "English"
+    languageCode: "en-us"
+    params:
+      description: "Trusted data protocol"
+  de:
+    title: "Aqua"
+    subitle: ""
+    languageName: "Deutsch"
+    languageCode: "de-de"
+    params:
+      description: "Vertrauenswürdiges Datenprotokoll"
+
