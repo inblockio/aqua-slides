@@ -1,0 +1,202 @@
+<section>
+
+    <section data-background-color="#4C609F">
+        <h1>BSI Report</h1>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ## Blockchain VS PII | Blockchain FOR PII
+        Blockchain nature:
+        Maximum and transparent distribution of data
+        Data unalterable for ever
+        Everyone can have access
+        Personal-Identifiable-Information (PII) nature:
+        No or minimal sharing of data
+        Delete if necessary
+        Restrictive access
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ## Blockchain VS PII | Blockchain FOR PII
+        "NEVER place personal identifiable information (PII) on a blockchain."
+        Correct use:
+        High entropy hashes for time stamping on a blockchain.
+        PII data needs to remain in secure containers controlled by the user. Access is regulated by a distributed key infrastructure independent of the blockchain.
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ## High-Level-Comparison
+        BSI Report - Pilot
+        AQUA
+        No secure wallets
+        We use wallets with secure-element
+        No standard crypto
+        AQUA uses standard cryptography
+        No access protection for PII
+        We have access protection for PII managed by claims
+        Dependent on blockchain and blockchain root-block as trust anchor
+        No central ‘root trust’ dependency
+        Needs blockchain for core functionality
+        We are not dependent on a blockchain but it adds value if used
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ## Conclusion
+        Tl;dr 
+        None of the critics raised in the Blockchain Pilot of the BSI are applicable to AQUA.
+        </textarea>
+    </section>
+</section>
+
+<section>
+
+    <section data-background-color="#4C609F">
+        #### Details
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Nicht standardisierter Krypto
+        Niemals zu empfehlen und auch in den Entwickler-Kreisen von öffentlichen Blockchains nicht anerkannt oder geduldet. 
+        Es gibt ausreichend viele international anerkannte veröffentlichte Kryptographische Standards, welche ebenso durch das BSI bestätigt als sicher gelten. Dies macht die Verwendung von nicht standardisierter Kryptografie in wenigsten Fällen vertretbar.
+        Es ist wichtig jeden Piloten individuell zu begutachten und zu bewerten. Im Rahmen der Entwicklung von 'Personal-Knowledge-Container' verwenden wir ausschließlich kryptographische Standards.
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Nicht standardisierter Krypto
+        Wir verwenden SHA3-512 Gewinner des National Institute of Standards and Technology welcher als sicherer Standard bestätigt durch das BSI gilt. Siehe BSI - Technische Richtlinie – Kryptographische Algorithmen und Schlüssellängen Seite 42.
+        Zum Signieren von Nachrichten mit Wallet verwenden wir den international anerkannten Krypto-Standards secp256k1 welcher in der -r1 variante vom BSI als sicher eingestuft ist. Siehe https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR03116/BSI-TR-03116-4.pdf?__blob=publicationFile&v=7 BSI secp256r1
+        Wir warten auf eine Einschätzung des BSI ob die 'k1' variante auch als Sicher aus der Perspektive des BSI gilt. Unsere Anfrage wurde am 3. November durch Tim Bansemer schriftlich gestellt und an entsprechende interne Fachstellen zur Beantwortung weitergeleitet
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### BSI Report
+        F: Vertrauensanker + Technisch einschränkung für das lesen de SSID Claims
+        A: Siehe Guardian welcher signierte Daten als Zugriffs-Claims interpretieren kann
+        F: Apps auf Pilot beschränken, damit nicht Dritte zugriff erhalten
+        A: Keine mobile Pilotierung empfohlen. 
+        Basierend auf bewährten Desktop- und Server-Plattformen (Linux, Mac, Windows) mit Browserzugang (Chrome-Engine)
+        F: Claim-Verifier müssen sich nicht gegenüber user Ausweisen und können Daten abfragen oder den User 'Manipulieren' da diesem nicht ausreichend Informationen präsentiert werden um eine informierte Entscheidung zu treffen
+        A: Zugang nicht möglich ohne Berechtigung des Claim-Holders, See Guardian
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### BSI Report Reflektionen
+        R: Einschränkung der Gültigkeit von Cred.
+        A: Teil des Claims, wird über Claim geregelt sowie über ‘Expiration Date’ in der Claim Registry
+        R: Warum Blockchain nutzen?
+        A: Secure time stamping for proof of existence
+        A: Global permission-less distributed identity registries
+        A: Unique global identities (based on Blockchain PKI)
+        A: Local: integrity verification with immutable revision control and cryptographic signatures
+        A: Large supported ecosystem for future development of Wallet-Technologies and application
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### BSI Report Reflektionen
+        Zertifizierte komponenten
+        Ubuntu LTS FIPS Certifiation https://ubuntu.com/blog/fips-certification-ubuntu-20-04-lts
+        NGINX (TBD: Hardening recommandation by BSI?)
+        EAL5+ Zertifizierung für Hardware Tokens (see Ledger X)
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Security of Ethereum Main Chain
+        Non-Stop ongoing Pentests due to value bound in on-chain
+        Individual pen-tests of different Ethereum-Wallets (See Ledger) and Node-Clients
+        Different Implementations based on the EIP Standard
+        Value management based on the same security assumption we use for the Wallets which manage our Data-Vaults
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### BSI Report Reflektionen
+        Rückruf / Revocation
+        Möglich durch den klassischen Weg oder via on-chain global Identity-Claim Revocation
+        Verschlüsselung von Daten
+        Encryption of Data done by encrypted hard drives of servers and computer systems which run the AQUA
+        Encryption von Backups und von Datenbanken spezifisch durch den micro-PKC Service (in Entwicklung)
+        Supported Platforms to run the Server infrastructure
+        Pilot nur auf Linux/Windows/ Mac
+        Clients can also be mobile at a later stage, but currently not recommended
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### BSI Report Reflektionen
+        Identity-Security Assurance Levels
+        Siehe Präsentations-Anfang
+        Identity-Security: Multi-Faktor / 2FA, One-Time-Password, Secure-Element Hardware-Token + Pin
+        The next phase of implementation is to add 2 factor authentication for logins.
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        BSI Report Reflektionen
+        Management für Sicherheitsvorfälle
+        For a pilot with PKC we'll name communication channels for escalating problems.
+        Sichere teilnahme Communication-hub
+        We are using Matrix
+        Currently not implemented but future canditate and optimal for usage as individual has full access to data
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        BSI Report Reflektionen
+        PAuswG, AufenthG, eIDKG usage to establish a 'Base ID'
+        Any form centralised registration and KYC (Know-Your-Customer) process would be good enough for a pilot. No need to start testing with an 'Personalausweis' with critical personal information attached. Usage of this amount of critical personal data is not recommended in a pilot if not required to proof the functionality of the system.
+        Aussteller / Issuer 
+        always account holder; claim-authority
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        BSI Report Reflektionen
+        Usage of privacy preserving ZK?
+        Currently not implemented but future candidate and optimal for usage as individual has full access to data
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        BSI Report Reflektionen
+        R: Single point of failure with all trust related to the Genesis block of a chain
+        A: We can do complete off-chain enchainment of Claim-Credentials and verification, no need to have a single attack point.
+        R: Anonyme Testnutzer
+        A: Not possible Not/Allowed usage in a permissioned approach
+        A: People can use the tech but will not be able to participate in the pilot as they can not present the required credentials to participate in the permissioned environment
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        BSI Report Reflektionen
+        R: Security Levels against claim-multiplication
+        A: Digitally there is no sufficient protection other then not sharing the credentials as it's in the nature of digital information the be replicable, to avoid sharing personal information there is a need to apply ZERO-Knowledge-Proofs to proof claims. This layer is not part of our prototype yet but is absolutely prepared to use ZK-Proofs on top of it.
+        A: To proof that we ARE the one presenting the claim, there is always a recommendation to request a current signature for a proof of control of the private-key at the time of request
+        </textarea>
+    </section>
+
+</section>

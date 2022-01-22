@@ -1,0 +1,108 @@
+<!-- Transport Layers -->
+
+<section>
+
+    <section
+        data-background-color="#4C609F">
+        <h1>Transport Layers</h1>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        There are different options for transport-layers on top of AQUA (node).
+        All of them have interesting properties, strength and weaknesses and are in different stages of maturity but all of them have live-deployments and are in a product stage.
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        Most mature to use might be 'via secure messaging'
+        - https://matrix.org
+        - https://didcomm.org
+        - https://pkc.inblock.io/index.php/AQUA_Transport-Layer
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Other Options
+        - https://www.ethswarm.org (not in presentation)
+        - https://ceramic.network (not in presentation)
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Matrix
+        We highly recommend matrix.org
+        High confidence in matrix for transport, most mature secure federated open option from the prospect list of the considered transport protocols for AQUA
+        We use matrix for our internal communications and piloting new features for matrix
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        #### Matrix
+        ## AQUA Service Pilot
+        Wallet login with Web-Wallet Metamask via OAuth
+        Register the user with the wallet address
+        Have a server-to-client challenge proof ownership of private key to wallet address
+        Uses the wallet’s as unique identifiers; allows to register matrix as a AQUA service to exchange messages between AQUA’s
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ##### DIDComm
+        ## WC3 / DID-Foundation
+        DIDComm as a transport layer - can be used by AQUA (not yet implemented)
+        DID - Compatible to AQUA
+        W3 “Verified Data Model” - We do it...differently.
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        Curiosity thought leader Christopher Allen / Rebooting Web of Trust:
+        ### Self-Sovereign-Identity-Principles
+        - https://pixabay.com/photos/ship-night-stars-sky-ocean-2787544/
+        - https://www.space.com/41795-how-to-find-polaris-stargazer-photo.html
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        Revocation List 2020 A privacy-preserving mechanism for revoking Verifiable Credentials
+        DIDCOMM implementations and use-cases
+        - https://didcomm.org
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ##### DIDComm
+        ## DID - compatible to AQUA
+
+        DID:ethr:<address>:<attribute>*
+        *attribute is AQUA pilot
+ 
+        - 0xa2026582B94FEb9124231fbF7b052c39218954C3:Given-Name
+        - 0xa2026582B94FEb9124231fbF7b052c39218954C3:Family-Name
+        - 0xa2026582B94FEb9124231fbF7b052c39218954C3:Date-Of-Birth
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ##### DIDComm
+        ## Summary
+        Uses PUBLIC / PRIVATE KEYS to establish security through encryption and signing
+        Transport Layer for e.g. Verifiable Credentials
+        Offers  a methodology for communication by being a base-layer for other protocols
+        DIDComm offers flexible topography and various delivery methods
+        http / https, socket, QR codes
+        AQUA could speak over DIDComm (Pilot possible)
+        </textarea>
+    </section>
+
+</section>
