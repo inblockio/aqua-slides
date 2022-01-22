@@ -51,12 +51,18 @@ body {
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  text-transform: uppercase;
+}
+
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 3.77em;  
+}
 
 .reveal h2 {
   font-size: 2.11em; }
@@ -70,13 +76,13 @@ body {
 .reveal h1 {
   text-shadow: none; }
 
+
 /*********************************************
  * OTHER
  *********************************************/
 .reveal p {
   margin: 20px 0;
   line-height: 1.3;
-  color: #111111;
   font-family: "SourceSansPro-Regular", "Helvetica", "Arial",  sans-serif;
 }
 
@@ -101,8 +107,11 @@ body {
 .reveal dl,
 .reveal ul {
   display: inline-block;
-  text-align: left;
-  margin: 0 0 0 1em; }
+  text-align: center;
+  margin: 0 0 0 0;
+  padding: 0 0;
+}
+
 
 .reveal ol {
   list-style-type: decimal; }
@@ -112,14 +121,14 @@ body {
 }
 
 .reveal section.text-left ul {
+    text-align: left;
     margin-left: 40px;
     padding-left: 20px;
 }
 
 .reveal ul li {
-    list-style-image: url("/images/list-triangle-gray.svg");
     margin-bottom: 1.5rem;
-    padding-left: 10px;
+    padding: 0 0;
 }
 
 .reveal ul ul {
@@ -133,13 +142,12 @@ body {
 .reveal ol ol,
 .reveal ol ul {
   display: block;
-  margin-left: 40px; }
+}
 
 .reveal dt {
   font-weight: bold; }
 
-.reveal dd {
-  margin-left: 40px; }
+.reveal dd {}
 
 .reveal q,
 .reveal blockquote {
@@ -150,7 +158,7 @@ body {
   position: relative;
   width: 75%;
   margin: 1rem auto 3rem auto;
-  padding: 0 0 0 1.5rem;
+  padding: .25rem;
   font-size: 0.55em;
   font-family: monospace;
   font-style: normal;
@@ -304,7 +312,8 @@ body {
   font-weight: bold;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  transition: color .15s ease;
+}
 
 .reveal a:hover {
   color: #4C609F;
@@ -448,8 +457,6 @@ section.has-dark-background h6 {
 }
 
 .reveal a.link-small {
-    background: #FFFFFF;
-    color: #555555;
     font-size: 16px;
     padding: .75rem 1.25rem;
 }

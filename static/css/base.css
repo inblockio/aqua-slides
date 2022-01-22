@@ -1,0 +1,75 @@
+/*********************************************
+ * BASE AQUA BRANDING
+ *********************************************/
+
+body {
+    background: #fff;
+    background-color: #fff;
+    font-family: "SourceSansPro-Regular", "Helvetica", "Arial",  sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #111111;
+    padding: 2rem 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px 0;
+    color: #111;
+    font-family: "Montserrat-Bold", "Helvetica", "Arial", sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
+    text-shadow: none;
+    word-wrap: break-word;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3.77em;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2.11em;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1.55em;
+}
+
+h4 {
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+
+ol,
+dl,
+ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+ol li,
+dl li,
+ul li {
+    margin-bottom: 2.5rem;
+}
