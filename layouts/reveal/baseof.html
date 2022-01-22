@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Lang }}">
 <head>
-    <title>{{ .Title }} Aqua</title>
+    <title>{{ .Title }} ({{.Lang}}) - Slideshow</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="{{ .Title }} is a slideshow relating to the AQUA trusted data protocol">
     <meta name="author" content="Aqua">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -48,18 +48,26 @@
 </head>
 <body class="reveal">
     <div class="slides">
-
         <section
-            data-background-color="#E2E2E2"
-            data-background-opacity="0.2"
-            data-background-image="/images/logo.svg"
-            data-background-size="contain">
-            <h1>{{ .Title }}</h1>
+            data-background-color="#E2E2E2">
             <pre>
-                Title: {{ .Title }}<br>
+                Slideshow: {{ .Title }}<br>
                 Created: {{ .Date.Format "Jan 2, 2006" }}<br>
                 Language: {{ .Params.Language }}
             </pre>
+            <a href="#/1">
+                Start Slideshow
+            </a>
+        </section>
+        <section
+            data-markdown
+            data-background-color="#4C609F">
+            <textarea data-template>
+            ## {{ i18n "talking_points" . }}
+            {{ range .Params.toc }}
+            - {{ . }}
+            {{ end }}
+            </textarea>
         </section>
         {{ $page := . }}
         {{ range $slide := .Params.slides_start }}
@@ -81,8 +89,7 @@
             autoPlayMedia: false,
             center: true,
             transition: 'slide',
-            dependencies: [
-                {
+            dependencies: [{
                     src: '/lib/js/classList.js',
                     condition: function() {
                         return !document.body.classList
