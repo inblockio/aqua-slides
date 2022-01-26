@@ -26,10 +26,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.TOKEN }}
-          external_repository: inblockio/inblockio.github.io
+          external_repository: aqua-slides/inblockio.github.io
           publish_dir: ./public
           #   keep_files: true
-          user_name: ux-
-          user_email: <username@email.com>
-          publish_branch: master
+          user_name: ux-design-dev
+          user_email: <ux-design-dev@inblock.io>
+          publish_branch: 
         #   cname: example.com
