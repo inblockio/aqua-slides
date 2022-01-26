@@ -24,11 +24,11 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          personal_token: ${{ secrets.TOKEN }}
-          external_repository: inblockio/aqua-slides
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          exclude_assets: '.github'
           keep_files: false
-          user_name: ux-design-dev
-          user_email: <ux-design-dev@inblock.io>
           publish_branch: gh-pages
           cname: inblock.io
